@@ -1,0 +1,11 @@
+{
+  "name": "01-fundamentos-nodejs--desafio",
+  "version": "1.0.0",
+  "description": "desafio do modulo 01 do curso de node da rocketseat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
