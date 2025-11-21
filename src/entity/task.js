@@ -62,4 +62,15 @@ export class Task {
   set completed_at(completed_at) {
     this.#completed_at = completed_at;
   }
+
+  toJSON() {
+    return {
+      id: this.#id,
+      title: this.#title,
+      description: this.#description,
+      created_at: this.#created_at,
+      updated_at: this.#updated_at,
+      completed_at: this.#completed_at,
+    };
+  }
 }
