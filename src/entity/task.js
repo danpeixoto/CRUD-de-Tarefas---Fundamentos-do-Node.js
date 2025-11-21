@@ -20,7 +20,7 @@ export class Task {
     this.#description = description;
     this.#created_at = created_at ? new Date(created_at) : new Date();
     this.#updated_at = updated_at ? new Date(updated_at) : new Date();
-    this.#completed_at = completed_at ? new Date(completed_at) : new Date();
+    this.#completed_at = completed_at ? new Date(completed_at) : null;
   }
 
   get id() {
