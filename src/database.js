@@ -23,15 +23,7 @@ export class Database {
     }
     const task = new Task({ ...data, id: null });
 
-    const plain = {
-      id: task.id,
-      title: task.title,
-      description: task.description,
-      created_at: task.created_at,
-      updated_at: task.updated_at,
-      completed_at: task.completed_at,
-    };
-
+    const plain = task.toJSON();
     this.#database[table].push(plain);
     this.#persist();
 
@@ -66,7 +58,7 @@ export class Database {
 
     const index = tableData.findIndex((item) => item.id === id);
     if (index !== -1) {
-      const { id: ignoreId, ...modifiedData } = data;
+      const { id: ignoreId, ...modifiedData } = data.toJSON();
       tableData[index] = { ...tableData[index], ...modifiedData };
     }
     this.#persist();
