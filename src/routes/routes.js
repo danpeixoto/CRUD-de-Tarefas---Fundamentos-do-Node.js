@@ -28,7 +28,7 @@ export const routes = [
       const { title, description } = req.body;
       if (!title || !description)
         return res
-          .writeHead(400)
+          .writeHead(422)
           .end('Campos title e description são obrigatórios');
 
       const newTask = database.insert('tasks', {
